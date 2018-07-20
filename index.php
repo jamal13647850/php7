@@ -36,3 +36,26 @@ function cmp($stringA , $stringB){
 }
 usort($nameList,'cmp');
 var_dump($nameList);
+
+
+
+interface Logger{
+    public function log(string $msg);
+}
+
+class Application{
+    private $logger;
+    public function getLogger() : Logger{
+       return $this->logger;
+    }
+    public function setLogger(Logger $logger){
+        $this->logger = $logger;
+    }
+}
+$app = new Application();
+$app->setLogger(new class implements Logger {
+    public function log(string $msg){
+        var_dump($msg);
+    }
+});
+$app->getLogger()->log("Message");
