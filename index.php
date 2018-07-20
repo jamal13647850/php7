@@ -25,3 +25,14 @@ $username = $_GET['user'] ?? 'nobody';
 $username = $_GET['user'] ?? $_POST['user'] ?? 'nobody';
 
 var_dump($username);
+
+
+$nameList = ["jamal","kamal","ali","behnam","morteza","rasool"];
+function cmp($stringA , $stringB){
+    /*if($stringA > $stringB) {return 1;}
+    if($stringA < $stringB) {return -1;}
+    if($stringA == $stringB) {return 0;}*/
+    return $stringA <=> $stringB;
+}
+usort($nameList,'cmp');
+var_dump($nameList);
