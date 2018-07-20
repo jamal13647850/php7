@@ -9,7 +9,7 @@
 declare(strict_types=1);
 
 //int bool float
-function sum(float $a , float $b){
+function sum(float $a , float $b):float {
     return $a + $b;
 }
 
